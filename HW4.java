@@ -60,8 +60,10 @@ public class HW4 {
 
       for (int i = 0; i < params.length; i++){
 // создаем новый массив строк в котором заменяем "" на '' по разделителю ":"
+// Причем params[i] сохраняемый в (elements[0] это name country city age)
+//,a (elements[1] это Ivanov Russia Moscow null)
           String[] elements = params[i].replace('"', ' ').split(":");
-// если не равно null то добавляем в stringBuilder
+// если не равно null в elements[1] то добавляем в stringBuilder
           if(!"null".equals(elements[1].trim())){       
             stringBuilder.append(elements[0].trim()).append("=").append("'").append(elements[1].trim()).append("'");
               if (i < params.length - 2) stringBuilder.append(" and ");
